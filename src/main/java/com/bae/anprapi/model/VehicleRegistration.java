@@ -16,7 +16,7 @@ public class VehicleRegistration {
 	@Id
 	private Long registrationId;
 
-	private String vehicleRegistrationNo;
+	private String vehicleRegistrationNo; //Foreign Key
 
 	@Temporal(TemporalType.DATE)
 	private Date registrationDate;

@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.bae.anprapi.model.Vehicles;
 
 @Repository
-public interface VehiclesRepository extends JpaRepository<Vehicles, Long> {
+public interface VehiclesRepository extends JpaRepository<Vehicles, String> {
 
 }
