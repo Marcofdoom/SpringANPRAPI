@@ -1,11 +1,7 @@
 package com.bae.anprapi.model;
 
-import java.util.Date;
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 import lombok.Data;
 
@@ -15,9 +11,6 @@ public class Vehicles {
 
 	@Id
 	private String vehicleRegistrationNo;
-
-	@Temporal(TemporalType.DATE)
-	private Date registrationDate;
 
 	private String make;
 
@@ -29,10 +22,8 @@ public class Vehicles {
 
 	}
 
-	public Vehicles(String vehicleRegistrationNo, Date registrationDate, String make, String model, String colour) {
-		super();
+	public Vehicles(String vehicleRegistrationNo, String make, String model, String colour) {
 		this.vehicleRegistrationNo = vehicleRegistrationNo;
-		this.registrationDate = registrationDate;
 		this.make = make;
 		this.model = model;
 		this.colour = colour;

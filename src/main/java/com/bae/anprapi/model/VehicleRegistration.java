@@ -16,7 +16,7 @@ public class VehicleRegistration {
 	@Id
 	private Long registrationId;
 
-	private String vehicleRegistrationNo; //Foreign Key
+	private String vehicleRegistrationNo;
 
 	@Temporal(TemporalType.DATE)
 	private Date registrationDate;
@@ -27,9 +27,9 @@ public class VehicleRegistration {
 
 	private String colour;
 
-	private String fornames;
+	private String forenames;
 
-	private String surnames;
+	private String surname;
 
 	private String address;
 
@@ -42,17 +42,17 @@ public class VehicleRegistration {
 
 	}
 
-	public VehicleRegistration(Long registrationId, String vehicleRegistrationNo, Date registrationDate,
-			String make, String model, String colour, String fornames, String surnames, String address,
-			Date dateOfBirth, String driverLicenceId) {
+	public VehicleRegistration(Long registrationId, String vehicleRegistrationNo, Date registrationDate, String make,
+			String model, String colour, String forenames, String surname, String address, Date dateOfBirth,
+			String driverLicenceId) {
 		this.registrationId = registrationId;
 		this.vehicleRegistrationNo = vehicleRegistrationNo;
 		this.registrationDate = registrationDate;
 		this.make = make;
 		this.model = model;
 		this.colour = colour;
-		this.fornames = fornames;
-		this.surnames = surnames;
+		this.forenames = forenames;
+		this.surname = surname;
 		this.address = address;
 		this.dateOfBirth = dateOfBirth;
 		this.driverLicenceId = driverLicenceId;
