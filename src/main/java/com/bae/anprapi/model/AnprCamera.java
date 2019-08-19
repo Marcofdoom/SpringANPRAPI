@@ -14,15 +14,15 @@ public class AnprCamera {
 
 	private String streetName;
 
-	private Double latitude;
+	private Float latitude;
 
-	private Double longitude;
+	private Float longitude;
 
 	public AnprCamera() {
 
 	}
 
-	public AnprCamera(Long anprId, String streetName, Double latitude, Double longitude) {
+	public AnprCamera(Long anprId, String streetName, Float latitude, Float longitude) {
 		this.anprId = anprId;
 		this.streetName = streetName;
 		this.latitude = latitude;
