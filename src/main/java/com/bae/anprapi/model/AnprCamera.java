@@ -5,7 +5,6 @@ import javax.persistence.Id;
 
 import lombok.Data;
 
-@Data
 @Entity
 public class AnprCamera {
 
@@ -26,6 +25,38 @@ public class AnprCamera {
 		this.anprId = anprId;
 		this.streetName = streetName;
 		this.latitude = latitude;
+		this.longitude = longitude;
+	}
+
+	public Long getAnprId() {
+		return anprId;
+	}
+
+	public void setAnprId(Long anprId) {
+		this.anprId = anprId;
+	}
+
+	public String getStreetName() {
+		return streetName;
+	}
+
+	public void setStreetName(String streetName) {
+		this.streetName = streetName;
+	}
+
+	public Float getLatitude() {
+		return latitude;
+	}
+
+	public void setLatitude(Float latitude) {
+		this.latitude = latitude;
+	}
+
+	public Float getLongitude() {
+		return longitude;
+	}
+
+	public void setLongitude(Float longitude) {
 		this.longitude = longitude;
 	}
 }

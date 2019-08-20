@@ -9,9 +9,6 @@ import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import lombok.Data;
-
-@Data
 @Entity
 public class VehicleObservations {
 
@@ -33,6 +30,38 @@ public class VehicleObservations {
 	public VehicleObservations(Long anprPointId, String vehicleRegistrationNumber, Date timeStamp) {
 		this.anprPointId = anprPointId;
 		this.vehicleRegistrationNumber = vehicleRegistrationNumber;
+		this.timeStamp = timeStamp;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public Long getAnprPointId() {
+		return anprPointId;
+	}
+
+	public void setAnprPointId(Long anprPointId) {
+		this.anprPointId = anprPointId;
+	}
+
+	public String getVehicleRegistrationNumber() {
+		return vehicleRegistrationNumber;
+	}
+
+	public void setVehicleRegistrationNumber(String vehicleRegistrationNumber) {
+		this.vehicleRegistrationNumber = vehicleRegistrationNumber;
+	}
+
+	public Date getTimeStamp() {
+		return timeStamp;
+	}
+
+	public void setTimeStamp(Date timeStamp) {
 		this.timeStamp = timeStamp;
 	}
 }
