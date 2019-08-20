@@ -10,5 +10,5 @@ import com.bae.anprapi.model.VehicleRegistration;
 @Repository
 public interface VehicleRegistrationRepositoryCustom {
 
-	public List<VehicleRegistration> findANPR(String forenames, String surname, String address, Date dateOfBirth);
+	public List<VehicleRegistration> findANPR(String forenames, String surname, String homeAddress, Date dateOfBirth);
 }

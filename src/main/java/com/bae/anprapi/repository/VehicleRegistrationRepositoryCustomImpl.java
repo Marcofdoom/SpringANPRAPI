@@ -27,7 +27,7 @@ public class VehicleRegistrationRepositoryCustomImpl implements VehicleRegistrat
 	}
 
 	@Override
-	public List<VehicleRegistration> findANPR(String forenames, String surname, String address, Date dateOfBirth) {
+	public List<VehicleRegistration> findANPR(String forenames, String surname, String homeAddress, Date dateOfBirth) {
 		CriteriaBuilder cb = entityManager.getCriteriaBuilder();
 		CriteriaQuery<VehicleRegistration> cq = cb.createQuery(VehicleRegistration.class);
 
@@ -42,8 +42,8 @@ public class VehicleRegistrationRepositoryCustomImpl implements VehicleRegistrat
 			predicates.add(cb.equal(cb.lower(citizen.get("surname")), surname.toLowerCase()));
 		}
 
-		if (address != null && !address.trim().contentEquals("")) {
-			predicates.add(cb.equal(cb.lower(citizen.get("address")), address.toLowerCase()));
+		if (homeAddress != null && !homeAddress.trim().contentEquals("")) {
+			predicates.add(cb.equal(cb.lower(citizen.get("homeAddress")), homeAddress.toLowerCase()));
 		}
 
 		if (dateOfBirth != null && !dateOfBirth.toString().contentEquals("")) {

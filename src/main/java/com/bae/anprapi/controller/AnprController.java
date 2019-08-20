@@ -32,14 +32,14 @@ public class AnprController {
 	@GetMapping("/getANPR")
 	public ResponseEntity<Object> getANPR(@RequestParam(value = "forenames", required = false) String forenames,
 			@RequestParam(value = "surname", required = false) String surname,
-			@RequestParam(value = "address", required = false) String address,
+			@RequestParam(value = "homeAddress", required = false) String homeAddress,
 			@RequestParam(value = "dateOfBirth", required = false) @DateTimeFormat(pattern = "yyyy-MM-dd") Date dateOfBirth) {
 
 		VehicleRegistration vehicleRegistration = new VehicleRegistration();
 
 		vehicleRegistration.setForenames(forenames);
 		vehicleRegistration.setSurname(surname);
-		vehicleRegistration.setAddress(address);
+		vehicleRegistration.setHomeAddress(homeAddress);
 		vehicleRegistration.setDateOfBirth(dateOfBirth);
 
 		return new ResponseEntity<>(service.getANPR(vehicleRegistration), HttpStatus.OK);

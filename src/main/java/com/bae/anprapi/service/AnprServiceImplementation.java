@@ -21,7 +21,7 @@ public class AnprServiceImplementation implements AnprService {
 	@Override
 	public List<VehicleRegistration> getANPR(VehicleRegistration vehicleRegistration) {
 		return vehicleRegistrationRepository.findANPR(vehicleRegistration.getForenames(),
-				vehicleRegistration.getSurname(), vehicleRegistration.getAddress(),
+				vehicleRegistration.getSurname(), vehicleRegistration.getHomeAddress(),
 				vehicleRegistration.getDateOfBirth());
 	}
 }
