@@ -4,7 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class Vehicles {
+public class Vehicle {
 
 	@Id
 	private String vehicleRegistrationNo;
@@ -15,11 +15,11 @@ public class Vehicles {
 
 	private String colour;
 
-	public Vehicles() {
+	public Vehicle() {
 
 	}
 
-	public Vehicles(String vehicleRegistrationNo, String make, String model, String colour) {
+	public Vehicle(String vehicleRegistrationNo, String make, String model, String colour) {
 		this.vehicleRegistrationNo = vehicleRegistrationNo;
 		this.make = make;
 		this.model = model;

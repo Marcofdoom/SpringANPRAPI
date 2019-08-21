@@ -18,19 +18,19 @@ public class VehicleObservations {
 
 	private Long anprPointId;
 
-	private String vehicleRegistrationNumber;
+	private String vehicleRegistrationNo;
 
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date timeStamp;
+	private Date timestamp;
 
 	public VehicleObservations() {
 
 	}
 
-	public VehicleObservations(Long anprPointId, String vehicleRegistrationNumber, Date timeStamp) {
+	public VehicleObservations(Long anprPointId, String vehicleRegistrationNo, Date timestamp) {
 		this.anprPointId = anprPointId;
-		this.vehicleRegistrationNumber = vehicleRegistrationNumber;
-		this.timeStamp = timeStamp;
+		this.vehicleRegistrationNo = vehicleRegistrationNo;
+		this.timestamp = timestamp;
 	}
 
 	public Long getId() {
@@ -49,19 +49,19 @@ public class VehicleObservations {
 		this.anprPointId = anprPointId;
 	}
 
-	public String getVehicleRegistrationNumber() {
-		return vehicleRegistrationNumber;
+	public String getVehicleRegistrationNo() {
+		return vehicleRegistrationNo;
 	}
 
-	public void setVehicleRegistrationNumber(String vehicleRegistrationNumber) {
-		this.vehicleRegistrationNumber = vehicleRegistrationNumber;
+	public void setVehicleRegistrationNo(String vehicleRegistrationNo) {
+		this.vehicleRegistrationNo = vehicleRegistrationNo;
 	}
 
-	public Date getTimeStamp() {
-		return timeStamp;
+	public Date getTimestamp() {
+		return timestamp;
 	}
 
-	public void setTimeStamp(Date timeStamp) {
-		this.timeStamp = timeStamp;
+	public void setTimestamp(Date timestamp) {
+		this.timestamp = timestamp;
 	}
 }
