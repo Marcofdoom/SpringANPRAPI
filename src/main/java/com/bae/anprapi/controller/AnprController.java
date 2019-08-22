@@ -44,4 +44,16 @@ public class AnprController {
 
 		return new ResponseEntity<>(service.getANPR(vehicleRegistration), HttpStatus.OK);
 	}
+
+	@GetMapping("/getCitizenFromRegistration")
+	public ResponseEntity<Object> getCitizenFromRegistration(
+			@RequestParam(value = "vehicleRegistrationNo") String vehicleRegistrationNo) {
+		return new ResponseEntity<>(service.getCitizenFromRegistration(vehicleRegistrationNo), HttpStatus.OK);
+	}
+
+	@GetMapping("/getVehicleLocation")
+	public ResponseEntity<Object> getVehicleLocation(
+			@RequestParam(value = "vehicleRegistrationNo") String vehicleRegistrationNo) {
+		return new ResponseEntity<>(service.getVehicleLocation(vehicleRegistrationNo), HttpStatus.OK);
+	}
 }

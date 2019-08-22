@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -16,7 +18,9 @@ public class VehicleObservations {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	private Long anprPointId;
+	@ManyToOne
+	@JoinColumn(name = "anpr_point_id")
+	private AnprCamera anprPointId;
 
 	private String vehicleRegistrationNo;
 
@@ -27,7 +31,7 @@ public class VehicleObservations {
 
 	}
 
-	public VehicleObservations(Long anprPointId, String vehicleRegistrationNo, Date timestamp) {
+	public VehicleObservations(AnprCamera anprPointId, String vehicleRegistrationNo, Date timestamp) {
 		this.anprPointId = anprPointId;
 		this.vehicleRegistrationNo = vehicleRegistrationNo;
 		this.timestamp = timestamp;
@@ -41,11 +45,11 @@ public class VehicleObservations {
 		this.id = id;
 	}
 
-	public Long getAnprPointId() {
+	public AnprCamera getAnprPointId() {
 		return anprPointId;
 	}
 
-	public void setAnprPointId(Long anprPointId) {
+	public void setAnprPointId(AnprCamera anprPointId) {
 		this.anprPointId = anprPointId;
 	}
 

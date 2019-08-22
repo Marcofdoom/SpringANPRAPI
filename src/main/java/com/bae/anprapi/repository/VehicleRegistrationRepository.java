@@ -8,4 +8,6 @@ import com.bae.anprapi.model.VehicleRegistration;
 @Repository
 public interface VehicleRegistrationRepository
 		extends JpaRepository<VehicleRegistration, Long>, VehicleRegistrationRepositoryCustom {
+
+	public VehicleRegistration findByVehicleRegistrationNo(String vehicleRegistrationNo);
 }
