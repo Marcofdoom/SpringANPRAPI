@@ -1,15 +1,9 @@
-package com.bae.anprapi.model;
+package com.bae.anprapi.model.DTO;
 
-import java.util.List;
+import java.util.Date;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+public class VehicleObservationsDTO {
 
-@Entity
-public class AnprCamera {
-
-	@Id
 	private Long anprId;
 
 	private String streetName;
@@ -18,18 +12,18 @@ public class AnprCamera {
 
 	private Float longitude;
 
-	@OneToMany(mappedBy = "anprPointId")
-	private List<VehicleObservations> vehicleObservations;
+	private String vehicleRegistrationNo;
 
-	public AnprCamera() {
+	private Date timestamp;
 
-	}
-
-	public AnprCamera(Long anprId, String streetName, Float latitude, Float longitude) {
+	public VehicleObservationsDTO(Long anprId, String streetName, Float latitude, Float longitude,
+			String vehicleRegistrationNo, Date timestamp) {
 		this.anprId = anprId;
 		this.streetName = streetName;
 		this.latitude = latitude;
 		this.longitude = longitude;
+		this.vehicleRegistrationNo = vehicleRegistrationNo;
+		this.timestamp = timestamp;
 	}
 
 	public Long getAnprId() {
@@ -62,5 +56,21 @@ public class AnprCamera {
 
 	public void setLongitude(Float longitude) {
 		this.longitude = longitude;
+	}
+
+	public String getVehicleRegistrationNo() {
+		return vehicleRegistrationNo;
+	}
+
+	public void setVehicleRegistrationNo(String vehicleRegistrationNo) {
+		this.vehicleRegistrationNo = vehicleRegistrationNo;
+	}
+
+	public Date getTimestamp() {
+		return timestamp;
+	}
+
+	public void setTimestamp(Date timestamp) {
+		this.timestamp = timestamp;
 	}
 }
