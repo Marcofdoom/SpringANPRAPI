@@ -1,4 +1,4 @@
-package com.bae.anprapi.repository;
+package com.bae.anprapi.repository.vehicleobservation;
 
 import java.util.List;
 

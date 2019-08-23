@@ -12,20 +12,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bae.anprapi.model.VehicleRegistration;
-import com.bae.anprapi.service.AnprService;
+import com.bae.anprapi.service.VehicleRegistrationService;
 
 @RestController
 @RequestMapping("/ANPR")
-public class AnprController {
+public class VehicleRegistrationController {
 
-	private AnprService service;
-
-	public AnprController() {
-
-	}
+	private VehicleRegistrationService service;
 
 	@Autowired
-	public AnprController(AnprService service) {
+	public VehicleRegistrationController(VehicleRegistrationService service) {
 		this.service = service;
 	}
 
@@ -42,18 +38,12 @@ public class AnprController {
 		vehicleRegistration.setHomeAddress(homeAddress);
 		vehicleRegistration.setDateOfBirth(dateOfBirth);
 
-		return new ResponseEntity<>(service.getANPR(vehicleRegistration), HttpStatus.OK);
+		return new ResponseEntity<>(service.findVehicleRegistration(vehicleRegistration), HttpStatus.OK);
 	}
 
 	@GetMapping("/getCitizenFromRegistration")
 	public ResponseEntity<Object> getCitizenFromRegistration(
 			@RequestParam(value = "vehicleRegistrationNo") String vehicleRegistrationNo) {
 		return new ResponseEntity<>(service.getCitizenFromRegistration(vehicleRegistrationNo), HttpStatus.OK);
-	}
-
-	@GetMapping("/getVehicleLocation")
-	public ResponseEntity<Object> getVehicleLocation(
-			@RequestParam(value = "vehicleRegistrationNo") String vehicleRegistrationNo) {
-		return new ResponseEntity<>(service.getVehicleLocation(vehicleRegistrationNo), HttpStatus.OK);
 	}
 }
