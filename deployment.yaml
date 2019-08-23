@@ -1,0 +1,21 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: skyre-anpr
+  labels: 
+    app: skyre-anpr
+spec:
+  selector:
+    matchLabels:
+      app: skyre-anpr
+  template:
+    metadata:
+      labels:
+        app: skyre-anpr
+    spec:
+      containers:
+      - name: skyre-anpr
+        image: eyjafjalla/skyre-anpr:latest
+        ports:
+        - containerPort: 8082
