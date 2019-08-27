@@ -1,0 +1,13 @@
+    
+apiVersion: v1
+kind: Service
+metadata:
+  name: skyre-anpr
+spec:
+  selector:
+    app: skyre-anpr
+  ports: 
+  - protocol: TCP
+    port: 8082
+    targetPort: 8082
+  type: ClusterIP
