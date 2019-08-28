@@ -1,4 +1,4 @@
-package com.bae.anprapi.model.DTO;
+package com.bae.anprapi.dto;
 
 import java.util.Date;
 

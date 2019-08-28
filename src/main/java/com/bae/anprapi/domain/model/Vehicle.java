@@ -1,4 +1,4 @@
-package com.bae.anprapi.model;
+package com.bae.anprapi.domain.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

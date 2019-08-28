@@ -1,10 +1,10 @@
-package com.bae.anprapi.repository.vehicleregistration;
+package com.bae.anprapi.domain.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.query.QueryByExampleExecutor;
 import org.springframework.stereotype.Repository;
 
-import com.bae.anprapi.model.VehicleRegistration;
+import com.bae.anprapi.domain.model.VehicleRegistration;
 
 @Repository
 public interface VehicleRegistrationRepository
@@ -12,4 +12,3 @@ public interface VehicleRegistrationRepository
 
 	public VehicleRegistration findByVehicleRegistrationNo(String vehicleRegistrationNo);
 }
-

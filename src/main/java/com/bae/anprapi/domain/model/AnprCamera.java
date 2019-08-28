@@ -1,4 +1,4 @@
-package com.bae.anprapi.model;
+package com.bae.anprapi.domain.model;
 
 import java.util.List;
 
