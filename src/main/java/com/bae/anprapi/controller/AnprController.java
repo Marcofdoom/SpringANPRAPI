@@ -1,6 +1,7 @@
 package com.bae.anprapi.controller;
 
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bae.anprapi.domain.model.VehicleRegistration;
+import com.bae.anprapi.dto.VehicleObservationsDTO;
 import com.bae.anprapi.service.VehicleObservationsService;
 import com.bae.anprapi.service.VehicleRegistrationService;
 
@@ -31,7 +33,7 @@ public class AnprController {
 	}
 
 	@GetMapping("/find-all-vehicle-locations")
-	public ResponseEntity<Object> findVehicleLocation(
+	public ResponseEntity<List<VehicleObservationsDTO>> findVehicleLocation(
 			@RequestParam(value = "vehicle-registration-no") String vehicleRegistrationNo) {
 		return new ResponseEntity<>(
 				vehicleObservationsService.findAllVehicleObservationsByRegistrationNo(vehicleRegistrationNo),
@@ -39,8 +41,9 @@ public class AnprController {
 	}
 
 	@GetMapping("/find-vehicle-registration")
-	public ResponseEntity<Object> findVehicleRegistrationByIdentity(@RequestParam(value = "forenames") String forenames,
-			@RequestParam(value = "surname") String surname, @RequestParam(value = "home-address") String homeAddress,
+	public ResponseEntity<List<VehicleRegistration>> findVehicleRegistrationByIdentity(
+			@RequestParam(value = "forenames") String forenames, @RequestParam(value = "surname") String surname,
+			@RequestParam(value = "home-address") String homeAddress,
 			@RequestParam(value = "date-of-birth") @DateTimeFormat(pattern = "yyyy-MM-dd") Date dateOfBirth) {
 
 		VehicleRegistration vehicleRegistration = new VehicleRegistration();
@@ -55,7 +58,7 @@ public class AnprController {
 	}
 
 	@GetMapping("/find-citizen-by-registration")
-	public ResponseEntity<Object> findCitizenByVehicleRegistration(
+	public ResponseEntity<VehicleRegistration> findCitizenByVehicleRegistration(
 			@RequestParam(value = "vehicle-registration-no") String vehicleRegistrationNo) {
 		return new ResponseEntity<>(vehicleRegistrationService.findCitizenByVehicleRegistration(vehicleRegistrationNo),
 				HttpStatus.OK);

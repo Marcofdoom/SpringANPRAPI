@@ -2,6 +2,7 @@ package com.bae.anprapi.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.bae.anprapi.domain.dao.VehicleObservationsDAO;
@@ -12,6 +13,7 @@ public class VehicleObservationsService {
 
 	private VehicleObservationsDAO vehicleObservationsDAO;
 
+	@Autowired
 	public VehicleObservationsService(VehicleObservationsDAO vehicleObservationsDAO) {
 		this.vehicleObservationsDAO = vehicleObservationsDAO;
 	}
